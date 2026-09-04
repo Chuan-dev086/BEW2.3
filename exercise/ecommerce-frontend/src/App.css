@@ -1,0 +1,329 @@
+/* ==================== Global Styles ==================== */
+:root {
+  --primary-color: #4169E1;
+  --success-color: #28A745;
+  --danger-color: #DC3545;
+  --warning-color: #FF9800;
+  --purple-color: #7B2CBF;
+  --light-bg: #F8F9FA;
+  --border-color: #E0E0E0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* ==================== App Container ==================== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #f5f5f5;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* ==================== Header Styles ==================== */
+.header-section {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+
+.btn-add-new {
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 16px;
+  border-radius: 4px;
+  background-color: var(--success-color);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-add-new:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* ==================== Filter Section ==================== */
+.filter-section {
+  background-color: #ffffff;
+  padding: 16px 0;
+  border-radius: 4px;
+}
+
+.filter-section .form-label {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.filter-dropdown {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 6px 12px;
+  background-color: #ffffff;
+  color: #333;
+  font-size: 14px;
+  max-width: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-dropdown:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.1);
+  outline: none;
+}
+
+.filter-dropdown:hover {
+  border-color: var(--primary-color);
+}
+
+/* ==================== Product Grid ==================== */
+.product-grid {
+  display: grid;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Responsive Grid */
+@media (max-width: 576px) {
+  .product-grid .row {
+    --bs-gutter-x: 12px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+  .product-grid .row {
+    --bs-gutter-x: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-grid .row {
+    --bs-gutter-x: 20px;
+  }
+}
+
+/* ==================== Product Card Styles ==================== */
+.product-card {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary-color);
+}
+
+.product-card .card-body {
+  padding: 20px;
+}
+
+.product-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  min-height: 48px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-price {
+  font-size: 18px;
+  color: #28A745;
+  font-weight: 700;
+}
+
+/* ==================== Category Badge ==================== */
+.badge-category {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background-color: var(--warning-color);
+  text-transform: uppercase;
+}
+
+/* ==================== Buttons ==================== */
+.btn-add-to-cart {
+  background-color: var(--primary-color);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 10px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #3d5fce;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(65, 105, 225, 0.4);
+}
+
+.btn-add-to-cart:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(65, 105, 225, 0.3);
+}
+
+.btn-edit {
+  background-color: var(--purple-color);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-edit:hover {
+  background-color: #6a24ad;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-delete {
+  background-color: var(--danger-color);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ==================== Responsive Design ==================== */
+/* Mobile Devices */
+@media (max-width: 575.98px) {
+  .header-title {
+    font-size: 24px;
+  }
+
+  .product-card .card-body {
+    padding: 16px;
+  }
+
+  .product-title {
+    font-size: 15px;
+  }
+
+  .btn-add-to-cart {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .filter-dropdown {
+    max-width: 100%;
+  }
+}
+
+/* Tablets */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .header-title {
+    font-size: 26px;
+  }
+
+  .product-card .card-body {
+    padding: 18px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .header-title {
+    font-size: 28px;
+  }
+}
+
+/* ==================== Loading Spinner ==================== */
+.spinner-border {
+  border-width: 3px;
+  width: 40px;
+  height: 40px;
+}
+
+/* ==================== Alert Messages ==================== */
+.alert {
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* ==================== Form Controls ==================== */
+.form-select {
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.1);
+}
+
+/* ==================== Empty State ==================== */
+.text-muted {
+  color: #999 !important;
+  font-size: 16px;
+}
+
+/* ==================== Spacing Utils ==================== */
+.gap-2 {
+  gap: 8px;
+}
+
+.gap-3 {
+  gap: 12px;
+}
+
+.gap-4 {
+  gap: 16px;
+}
