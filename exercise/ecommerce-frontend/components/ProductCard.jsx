@@ -8,13 +8,10 @@ const ProductCard = ({ product, onAddToCart, onEdit, onDelete }) => {
         {/* Price and Category */}
         <div className="mb-3">
           <div className="d-flex mb-2 align-items-center justify-content-between">
-            <span className="text-success fw-bold product-price">
+            <span className="px-3 py-1 badge rounded-pill bg-success-subtle text-success fw-bold">
               ${product.price.toFixed(2)}
             </span>
-            <span
-              className="badge-category"
-              style={{ backgroundColor: product.categoryColor }}
-            >
+            <span className="px-3 py-1 badge rounded-pill bg-warning-subtle text-warning-emphasis fw-bold">
               {product.categoryLabel}
             </span>
           </div>
@@ -22,22 +19,30 @@ const ProductCard = ({ product, onAddToCart, onEdit, onDelete }) => {
 
         {/* Add to Cart Button */}
         <button
-          className="mb-3 btn btn-primary btn-sm btn-add-to-cart w-100"
+          className="mb-3 btn btn-primary w-100 fw-bold"
+          style={{
+            backgroundColor: "#4285f4",
+            borderColor: "#4285f4",
+            borderRadius: "6px",
+            fontSize: "14px",
+          }}
           onClick={() => onAddToCart(product.id)}
         >
-          Add to Cart
+          Add To Cart
         </button>
 
         {/* Edit and Delete Buttons */}
-        <div className="d-flex gap-2">
+        <div className="d-flex justify-content-between align-items-center">
           <button
-            className="flex-grow-1 btn btn-edit btn-sm"
+            className="px-3 py-1 btn text-white rounded-pill fw-bold"
+            style={{ backgroundColor: "#6366f1", fontSize: "12px" }}
             onClick={() => onEdit(product.id)}
           >
             Edit
           </button>
           <button
-            className="flex-grow-1 btn btn-delete btn-sm"
+            className="px-3 py-1 btn text-white rounded-pill fw-bold"
+            style={{ backgroundColor: "#ff0055", fontSize: "12px" }}
             onClick={() => onDelete(product.id)}
           >
             Delete
