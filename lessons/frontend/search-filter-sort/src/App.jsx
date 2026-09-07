@@ -8,7 +8,7 @@ function App() {
   const [onPromotion, setOnPromotion] = useState(false);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(0);
-  const [sort, setSort] = useState("price");
+  const [sort, setSort] = useState("");
   const [order, setOrder] = useState(1);
 
   useEffect(() => {
@@ -26,10 +26,8 @@ function App() {
       if (sort !== "") params.append("sort", sort);
       if (order !== "") params.append("order", order);
 
-      console.log(params.toString());
-
       const response = await fetch(
-        `http://localhost:3000/product/filter?${params.toString()}`,
+        `http://localhost:3000/products/filter?${params.toString()}`,
       );
       const data = await response.json();
       console.log(data);
@@ -81,17 +79,25 @@ function App() {
             <Form.Label className="text-white">Sort By</Form.Label>
             <Form.Select
               size="lg"
-              value={`${sort}_${order}`}
+              value={sort}
               onChange={(e) => {
-                const [sortType, orderValue] = e.target.value.split("_");
-                setSort(sortType);
-                setOrder(Number(orderValue));
+                setSort(e.target.value);
               }}
             >
-              <option value="price_1">Price: Low to High</option>
-              <option value="price_-1">Price: High to Low</option>
-              <option value="name_1">Name: A to Z</option>
-              <option value="name_-1">Name: Z to A</option>
+              <option value="">Default</option>
+              <option value="name">Name</option>
+              <option value="price">Price</option>
+            </Form.Select>
+            <Form.Label className="text-white">Sort Order</Form.Label>
+            <Form.Select
+              size="lg"
+              value={order}
+              onChange={(e) => {
+                setOrder(e.target.value);
+              }}
+            >
+              <option value={1}>Ascending</option>
+              <option value={-1}>Descending</option>
             </Form.Select>
           </Col>
         </Row>
