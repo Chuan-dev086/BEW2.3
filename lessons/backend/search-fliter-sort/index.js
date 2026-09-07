@@ -21,7 +21,7 @@ const corsHandler = cors({
 });
 
 app.use(corsHandler);
-app.use("/product", productRouter);
+app.use("/products", productRouter);
 
 app.get("/", (req, res) => {
   res.send("Welcome to Our AnythingStore API!");
